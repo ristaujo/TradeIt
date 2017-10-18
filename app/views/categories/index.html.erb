@@ -2,7 +2,7 @@
   <div class="leftbar">
     <a href="#"><h1>TradeIt</h1></a>
     <ul>
-      <a href="#">post to classifieds</a>
+      <%= link_to 'post to classifieds', new_listing_path %>
       <li>my account</li>
     </ul>
     <form>
@@ -31,7 +31,7 @@
           <td>
             <% @household.subcategories.each do |subcategory| %> 
             <ul class="left-list">
-              <li><%= link_to subcategory.name %></li>
+              <li><%= link_to subcategory.name, category_subcategory_path(@household, subcategory) %></li>
              
             </ul>
             <% end %>
@@ -46,7 +46,7 @@
           <td>
             <% @food.subcategories.each do |subcategory| %> 
             <ul class="left-list">
-              <li><%= link_to subcategory.name %></li>
+              <li><%= link_to subcategory.name, category_subcategory_path(@food, subcategory) %></li>
              
             </ul>
             <% end %>
@@ -61,7 +61,7 @@
           <td>
             <% @services.subcategories.each do |subcategory| %> 
             <ul class="left-list">
-              <li><%= link_to subcategory.name %></li>           
+              <li><%= link_to subcategory.name, category_subcategory_path(@services, subcategory) %></li>           
             </ul>
             <% end %>
           </td>
@@ -77,7 +77,7 @@
           <td>
             <% @electronics.subcategories.each do |subcategory| %> 
             <ul class="left-list">
-              <li><%= link_to subcategory.name %></li>           
+              <li><%= link_to subcategory.name, category_subcategory_path(@electronics, subcategory) %></li>           
             </ul>
             <% end %>
           </td>
@@ -91,7 +91,7 @@
           <td>
             <% @collectibles.subcategories.each do |subcategory| %> 
             <ul class="left-list">
-              <li><%= link_to subcategory.name %></li>           
+              <li><%= link_to subcategory.name, category_subcategory_path(@collectibles, subcategory) %></li>           
             </ul>
             <% end %>
           </td>
@@ -107,7 +107,7 @@
           <td>
             <% @events.subcategories.each do |subcategory| %> 
             <ul class="left-list">
-              <li><%= link_to subcategory.name %></li>           
+              <li><%= link_to subcategory.name, category_subcategory_path(@events, subcategory) %></li>           
             </ul>
             <% end %>
           </td>

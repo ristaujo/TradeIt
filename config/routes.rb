@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :subcategories
   end
 
+  resources :listings do 
+  end
+
   root 'categories#index'
 
   match '/help', to: 'pages#help', via: :get
