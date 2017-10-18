@@ -4,7 +4,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.string :name
     end
 
-    create_table :sub_categories do |t|
+    create_table :subcategories do |t|
       t.string :name
       t.integer :category_id
     end
