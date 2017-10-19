@@ -5,11 +5,21 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-    @listing.save
+    @listing.user = current_user
+    if @listing.save
+      redirect_to @listing
+    else
+      flash[:alert] = @listing.errors.full_messages.to_sentence
+      render 'new'
+    end
   end
 
   def show
     @listing = Listing.find(params[:id])
+  end
+
+  def search
+    @listings = Listing.search(params)
   end
 
   def index
