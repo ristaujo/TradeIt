@@ -25,6 +25,10 @@ class ListingsController < ApplicationController
   def index
   end
 
+  def mylistings
+    @listings = Listing.where(user: current_user)
+  end
+
   private
 
   def listing_params
