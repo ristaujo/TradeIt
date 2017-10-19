@@ -1,12 +1,12 @@
 class CategoriesController < ApplicationController 
   def index
     @categories = Category.all
-    @household = @categories[2]
-    @food = @categories[3]
-    @services = @categories[4]
-    @electronics = @categories[5]
-    @collectibles = @categories[6]
-    @events = @categories[7]
+    @household = @categories[0]
+    @food = @categories[1]
+    @services = @categories[2]
+    @electronics = @categories[3]
+    @collectibles = @categories[4]
+    @events = @categories[5]
   end 
 
   def show
